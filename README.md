@@ -269,7 +269,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 **Vivian Pereira**
 
 -   GitHub: [@vivian](https://github.com/vivian)
--   Email: contato@rewarcalc.com
+-   Email: vivian_pereira@outlook.com.br
 
 ## ⚖️ Disclaimer
 
