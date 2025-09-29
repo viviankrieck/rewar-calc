@@ -1,18 +1,22 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "tallstackui/starter-kit",
+    "name": "vivian/rewar-calc",
     "type": "project",
-    "description": "The TallStackUI Starter Kit for Laravel 12.",
+    "description": "Calculadora independente para pontos Xbox Rewards - Descubra o valor real dos seus pontos e encontre as melhores recompensas.",
     "keywords": [
+        "xbox",
+        "rewards",
+        "calculator",
+        "gaming",
+        "points",
         "laravel",
-        "framework",
-        "tallstackui"
+        "livewire"
     ],
     "license": "MIT",
     "authors": [
         {
-            "name": "AJ Meireles",
-            "email": "alvaro.meireles@live.com"
+            "name": "Vivian Pereira",
+            "email": "contato@rewarcalc.com"
         }
     ],
     "require": {

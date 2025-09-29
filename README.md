@@ -14,6 +14,7 @@
     <img alt="PHP" src="https://img.shields.io/badge/PHP-8.2+-777BB4?style=for-the-badge&logo=php">
     <img alt="Livewire" src="https://img.shields.io/badge/Livewire-3.x-FB70A9?style=for-the-badge&logo=livewire">
     <img alt="TailwindCSS" src="https://img.shields.io/badge/TailwindCSS-4.0-38B2AC?style=for-the-badge&logo=tailwind-css">
+    <img alt="License" src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge">
 </p>
 
 ## 🚀 Sobre o Projeto
