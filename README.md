@@ -268,7 +268,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 **Vivian Pereira**
 
--   GitHub: [@vivian](https://github.com/vivian)
+-   GitHub: [@vivian](https://github.com/viviankrieck)
 -   Email: vivian_pereira@outlook.com.br
 
 ## ⚖️ Disclaimer
