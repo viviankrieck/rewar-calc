@@ -1,8 +1,13 @@
-/* Neon Background Design - Elegant Futuristic */
+/* Xbox-Inspired Background Design */
 body {
     margin: 0;
     height: 100vh;
-    background: linear-gradient(135deg, #0a0e27 0%, #001a0f 50%, #0d2b1f 100%);
+    background: radial-gradient(
+        ellipse at top,
+        #0e1e0e 0%,
+        #050a05 40%,
+        #000000 100%
+    );
     overflow: hidden;
     position: relative;
     background-image: url("../public/assets/bg/bg.png");
@@ -19,23 +24,24 @@ body::before {
     right: 0;
     bottom: 0;
     background:
-        linear-gradient(
-            90deg,
-            transparent 0%,
-            rgba(0, 255, 150, 0.08) 25%,
-            rgba(100, 150, 255, 0.06) 50%,
-            rgba(0, 255, 150, 0.08) 75%,
-            transparent 100%
+        radial-gradient(
+            circle 600px at 15% 25%,
+            rgba(16, 124, 16, 0.12),
+            transparent 60%
+        ),
+        radial-gradient(
+            circle 500px at 85% 75%,
+            rgba(16, 124, 16, 0.08),
+            transparent 60%
         ),
         linear-gradient(
-            0deg,
+            180deg,
             transparent 0%,
-            rgba(0, 255, 102, 0.04) 50%,
-            rgba(100, 200, 255, 0.03) 100%
+            rgba(16, 124, 16, 0.03) 50%,
+            transparent 100%
         );
     pointer-events: none;
     z-index: 1;
-    backdrop-filter: blur(0.5px);
 }
 
 body::after {
@@ -47,58 +53,55 @@ body::after {
     height: 100%;
     background:
         radial-gradient(
-            ellipse 800px 600px at 20% 30%,
-            rgba(0, 255, 150, 0.15),
+            ellipse 1000px 400px at 50% 20%,
+            rgba(16, 124, 16, 0.15),
             transparent 50%
         ),
         radial-gradient(
-            ellipse 600px 500px at 80% 70%,
-            rgba(100, 150, 255, 0.1),
+            ellipse 800px 600px at 80% 80%,
+            rgba(16, 124, 16, 0.1),
             transparent 50%
-        ),
-        linear-gradient(135deg, rgba(0, 255, 102, 0.03), rgba(0, 0, 0, 0.1));
+        );
     pointer-events: none;
     z-index: 1;
-    animation: gradientShift 15s ease-in-out infinite;
+    animation: gradientShift 20s ease-in-out infinite;
 }
 
 @keyframes gradientShift {
     0% {
-        opacity: 0.8;
-        transform: scale(1) translateX(-2%);
+        opacity: 0.7;
+        transform: scale(1) translateY(-2%);
     }
     50% {
         opacity: 1;
-        transform: scale(1.05) translateX(2%);
+        transform: scale(1.1) translateY(2%);
     }
     100% {
-        opacity: 0.8;
-        transform: scale(1) translateX(-2%);
+        opacity: 0.7;
+        transform: scale(1) translateY(-2%);
     }
 }
 
-/* Linha neon horizontal superior */
+/* Linha horizontal com glow verde Xbox */
 .neon-line {
     position: fixed;
     top: 15%;
     left: 0;
     width: 100%;
-    height: 2px;
+    height: 1px;
     background: linear-gradient(
         90deg,
         transparent 0%,
-        #00ff66 15%,
-        #00cc88 50%,
-        #00ff66 85%,
+        #107c10 15%,
+        #30a030 50%,
+        #107c10 85%,
         transparent 100%
     );
     box-shadow:
-        0 0 15px #00ff66,
-        0 0 30px #00ff66,
-        0 0 45px rgba(0, 255, 102, 0.5),
-        0 0 60px rgba(0, 200, 150, 0.3);
-    filter: blur(1px);
-    animation: pulse-line 4s ease-in-out infinite;
+        0 0 10px #107c10,
+        0 0 20px #107c10,
+        0 0 30px rgba(16, 124, 16, 0.5);
+    animation: pulse-line 5s ease-in-out infinite;
     z-index: 2;
 }
 
@@ -144,16 +147,16 @@ body::after {
         glow-pulse 3s ease-in-out infinite;
 } */
 
-/* Padrão de pontos neon */
+/* Padrão de pontos verde Xbox */
 .neon-dots {
     position: fixed;
     top: 22%;
     right: 4vw;
     width: 520px;
     height: 430px;
-    background-image: radial-gradient(circle, #00ff99 2px, transparent 2px);
-    background-size: 35px 35px;
-    opacity: 0.6;
+    background-image: radial-gradient(circle, #107c10 1.5px, transparent 2px);
+    background-size: 40px 40px;
+    opacity: 0.4;
     mask: radial-gradient(
         ellipse 70% 80% at center,
         black 0%,
@@ -162,47 +165,46 @@ body::after {
     );
     z-index: 2;
     box-shadow:
-        0 0 20px #00ff66,
-        0 0 40px rgba(0, 255, 102, 0.3),
-        inset 0 0 60px rgba(0, 255, 102, 0.1);
-    animation: float-dots 6s ease-in-out infinite;
-    filter: drop-shadow(0 0 15px rgba(0, 255, 102, 0.2));
+        0 0 15px #107c10,
+        0 0 30px rgba(16, 124, 16, 0.2);
+    animation: float-dots 8s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px rgba(16, 124, 16, 0.3));
 }
 
-/* Animações Neon */
+/* Animações */
 @keyframes pulse-line {
     0% {
-        opacity: 0.5;
+        opacity: 0.4;
         box-shadow:
-            0 0 15px #00ff66,
-            0 0 30px #00ff66,
-            0 0 45px rgba(0, 255, 102, 0.3);
+            0 0 10px #107c10,
+            0 0 20px #107c10,
+            0 0 30px rgba(16, 124, 16, 0.3);
     }
     50% {
-        opacity: 1;
+        opacity: 0.8;
         box-shadow:
-            0 0 20px #00ff66,
-            0 0 40px #00ff66,
-            0 0 60px #00ff66,
-            0 0 80px rgba(0, 200, 150, 0.4);
+            0 0 15px #107c10,
+            0 0 30px #107c10,
+            0 0 45px #107c10,
+            0 0 60px rgba(16, 124, 16, 0.4);
     }
     100% {
-        opacity: 0.5;
+        opacity: 0.4;
         box-shadow:
-            0 0 15px #00ff66,
-            0 0 30px #00ff66,
-            0 0 45px rgba(0, 255, 102, 0.3);
+            0 0 10px #107c10,
+            0 0 20px #107c10,
+            0 0 30px rgba(16, 124, 16, 0.3);
     }
 }
 
 @keyframes glow-pulse {
     0%,
     100% {
-        filter: drop-shadow(0 0 15px rgba(0, 255, 102, 0.3));
+        filter: drop-shadow(0 0 10px rgba(16, 124, 16, 0.3));
     }
     50% {
-        filter: drop-shadow(0 0 30px rgba(0, 255, 102, 0.6))
-            drop-shadow(0 0 50px rgba(0, 200, 150, 0.3));
+        filter: drop-shadow(0 0 20px rgba(16, 124, 16, 0.5))
+            drop-shadow(0 0 40px rgba(16, 124, 16, 0.3));
     }
 }
 
@@ -210,11 +212,11 @@ body::after {
     0%,
     100% {
         transform: translateY(0px);
-        opacity: 0.6;
+        opacity: 0.4;
     }
     50% {
-        transform: translateY(-20px);
-        opacity: 0.9;
+        transform: translateY(-15px);
+        opacity: 0.7;
     }
 }
 
@@ -302,11 +304,11 @@ body::before {
     background: linear-gradient(
         90deg,
         transparent 0%,
-        rgba(100, 150, 255, 0.1) 30%,
-        rgba(100, 150, 255, 0.05) 70%,
+        rgba(16, 124, 16, 0.15) 30%,
+        rgba(16, 124, 16, 0.08) 70%,
         transparent 100%
     );
-    animation: slide-line 8s linear infinite;
+    animation: slide-line 10s linear infinite;
 }
 
 @keyframes slide-line {

@@ -1,11 +1,9 @@
 <div class="text-center text-white">
-    <x-card
-        class="bg-gradient-to-r from-primary-950/50
-    via-primary-900 shadow-sm border-b border-primary-700 w-[400px]">
+    <x-card class="bg-black/40 backdrop-blur-sm shadow-2xl border border-green-900/30 w-full">
         <div class="grid grid-flow-col justify-items-center">
             <div>
-                <h1 class="text-3xl font-bold mb-2 text-lime-300">Cartão presente</h1>
-                <h1 class="text-2md font-bold mb-2">Calculadora de Pontos</h1>
+                <h1 class="text-3xl font-bold mb-2 text-green-400">Cartão presente</h1>
+                <h1 class="text-xl font-bold mb-4 text-gray-200">Calculadora de Pontos</h1>
                 {{-- <p class="mb-6">
                     Calcule quantos pontos você precisa para resgatar seus prêmios favoritos!
 
@@ -27,10 +25,10 @@
             <x-button primary wire:click="calculatePoints" class="w-full">Calcular</x-button>
         </div>
         @if ($points_in_value !== null)
-            <div class="mt-4 p-4 bg-primary-800 rounded-lg">
-                <h2 class="text-xl font-semibold mb-2">Resultado:</h2>
-                <p class="text-lg">Você pode resgatar até <span class="italic">aproximadamente</span> <span
-                        class="font-bold">R$
+            <div class="mt-4 p-5 bg-green-900/20 backdrop-blur-sm rounded-lg border border-green-700/40 shadow-lg">
+                <h2 class="text-xl font-semibold mb-2 text-green-400">Resultado:</h2>
+                <p class="text-lg text-gray-200">Você pode resgatar até <span class="italic">aproximadamente</span>
+                    <span class="font-bold text-green-300">R$
                         {{ $points_in_value }}</span> em
                     prêmios!</p>
             </div>
