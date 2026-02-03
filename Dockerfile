@@ -39,8 +39,13 @@ RUN npm install && npm run build
 RUN chown -R www-data:www-data /app/storage /app/bootstrap/cache \
     && chmod -R 775 /app/storage /app/bootstrap/cache
 
-# Limpa qualquer cache residual e gera o novo
-RUN php artisan config:cache && php artisan route:cache && php artisan view:cache
+# 1. Garanta permissão total para teste (evita o erro 500 silencioso)
+RUN chmod -R 777 storage bootstrap/cache
 
+# 2. LIMPE tudo em vez de cachear (o Laravel vai gerar em tempo de execução)
+RUN php artisan config:clear && \
+    php artisan route:clear && \
+    php artisan view:clear && \
+    php artisan cache:clear
 # Inicia o servidor (O Railway exige que ouça em 0.0.0.0)
 CMD php -S 0.0.0.0:$PORT -t public
