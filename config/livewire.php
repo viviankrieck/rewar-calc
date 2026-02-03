@@ -40,5 +40,4 @@ return [
     | or have a custom domain for serving your assets.
     |---------------------------------------------------------------------------
     */
-    'asset_url' => env('APP_URL'),
 ];

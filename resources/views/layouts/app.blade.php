@@ -15,11 +15,11 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <tallstackui:script />
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
         @livewireStyles
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
 
-    <body class="font-sans antialiased h-screen flex flex-col overflow-hidden apply-neon-bg" x-cloak
+    <body class="font-sans antialiased h-screen flex flex-col overflow-hidden apply-neon-bg dark"
         x-bind:class="{ 'dark': darkTheme }">
 
         <!-- Navbar Simples -->

@@ -4,10 +4,6 @@
             <div>
                 <h1 class="text-3xl font-bold mb-2 text-green-400">Cartão presente</h1>
                 <h1 class="text-xl font-bold mb-4 text-gray-200">Calculadora de Pontos</h1>
-                {{-- <p class="mb-6">
-                    Calcule quantos pontos você precisa para resgatar seus prêmios favoritos!
-
-                </p> --}}
             </div>
         </div>
 
@@ -30,7 +26,8 @@
                 <p class="text-lg text-gray-200">Você pode resgatar até <span class="italic">aproximadamente</span>
                     <span class="font-bold text-green-300">R$
                         {{ $points_in_value }}</span> em
-                    prêmios!</p>
+                    prêmios!
+                </p>
             </div>
         @endif
 
