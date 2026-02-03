@@ -30,4 +30,15 @@ return [
     'legacy_model_binding' => true, // Default is false. The starter kit uses the legacy model binding.
 
     // All other configuration options are the same as the default.
+
+    /*
+    |---------------------------------------------------------------------------
+    | Asset URL
+    |---------------------------------------------------------------------------
+    | Here you may specify a custom asset URL for Livewire to use when
+    | generating asset URLs. This is useful if you are using a CDN
+    | or have a custom domain for serving your assets.
+    |---------------------------------------------------------------------------
+    */
+    'asset_url' => env('APP_URL'),
 ];

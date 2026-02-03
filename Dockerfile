@@ -14,7 +14,10 @@ RUN npm install && npm run build
 # Permissões totais para evitar erro 500 de escrita
 RUN chmod -R 777 storage bootstrap/cache
 
+# Instala e gera assets
+RUN npm install && npm run build
+
 # Limpa caches de arquivos apenas
 RUN php artisan config:clear && php artisan route:clear && php artisan view:clear
 
-CMD php -S 0.0.0.0:$PORT -t public
+CMD php artisan serve --host=0.0.0.0 --port=$PORT
