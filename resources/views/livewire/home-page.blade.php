@@ -1,6 +1,6 @@
 <div>
     <div>
-        Estou em manutenção. Volto em breve!
+        <h1>Está funcionando em produção!</h1>
     </div>
     {{-- <x-app-layout>
         <h1

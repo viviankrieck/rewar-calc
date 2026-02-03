@@ -19,11 +19,17 @@ COPY . .
 RUN composer install --optimize-autoloader --no-dev
 RUN php artisan config:cache && php artisan route:cache
 
+# Instala dependências Laravel com ignore-platform-req para ext-zip
+RUN composer install --ignore-platform-req=ext-zip --optimize-autoloader --no-dev
+
 # Instala dependências frontend
 RUN npm install && npm run build
 
 # Configura variáveis de ambiente
 RUN php artisan config:clear && php artisan config:cache
+
+# Configura views cache
+RUN php artisan view:clear && php artisan view:cache
 
 # Inicia o servidor Laravel
 CMD php artisan serve --host=0.0.0.0 --port=$PORT
