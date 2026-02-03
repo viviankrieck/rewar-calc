@@ -1,8 +1,5 @@
 <div>
-    <div>
-        <h1>Está funcionando em produção!</h1>
-    </div>
-    {{-- <x-app-layout>
+    <x-app-layout>
         <h1
             class="bg-gradient-to-r from-green-400 via-green-500 to-green-600 bg-clip-text text-5xl font-extrabold text-transparent mt-6 text-center drop-shadow-lg">
             Calculadora de Pontos de Recompensa
@@ -25,5 +22,5 @@
                 <livewire:calculator.calculator />
             </div>
         </div>
-    </x-app-layout> --}}
+    </x-app-layout>
 </div>
