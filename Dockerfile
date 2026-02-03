@@ -15,9 +15,17 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 COPY . .
 
+# Ajusta permissões para diretórios de armazenamento e cache
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+RUN chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
+
+
 # Instala dependências Laravel
 RUN composer install --optimize-autoloader --no-dev
 RUN php artisan config:cache && php artisan route:cache
+
+# Publica assets do Livewire
+RUN php artisan livewire:publish --assets
 
 # Instala dependências Laravel com ignore-platform-req para ext-zip
 RUN composer install --ignore-platform-req=ext-zip --optimize-autoloader --no-dev
