@@ -22,18 +22,15 @@
     <body class="font-sans antialiased h-screen flex flex-col overflow-hidden apply-neon-bg" x-cloak
         x-bind:class="{ 'dark': darkTheme }">
 
-        <!-- Elementos Neon de Fundo -->
-        <div class="neon-line"></div>
-        <div class="neon-hexagon"></div>
-        <div class="neon-dots"></div>
-
         <!-- Navbar Simples -->
         <livewire:home.navbar />
+
         <!-- Conteúdo principal -->
         <main class="flex-1 overflow-hidden relative z-10">
             {{ $slot }}
         </main>
 
+        <!-- Footer Simples -->
         <livewire:home.footer />
         @livewireScripts
     </body>
