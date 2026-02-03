@@ -1,8 +1,8 @@
 FROM php:8.2-cli
 
 RUN apt-get update && apt-get install -y \
-    libzip-dev unzip git nodejs npm libicu-dev libxml2-dev sqlite3 \
-    && docker-php-ext-install zip bcmath intl dom pdo pdo_sqlite
+    libzip-dev unzip git nodejs npm libicu-dev libxml2-dev \
+    && docker-php-ext-install zip bcmath intl dom
 
 WORKDIR /app
 COPY . .
