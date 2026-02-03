@@ -22,6 +22,6 @@ RUN npm ci && npm run build
 RUN php artisan config:cache && php artisan route:cache && php artisan view:cache
 
 # Inicia o servidor Laravel
-CMD php artisan serve --host=0.0.0.0 --port=$PORT
+# CMD php artisan serve --host=0.0.0.0 --port=$PORT
 
-# CMD php -d display_errors=stderr -S 0.0.0.0:${PORT:-8080} -t public
+CMD php -d display_errors=stderr -S 0.0.0.0:${PORT} -t public
