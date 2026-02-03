@@ -18,6 +18,11 @@ RUN mkdir -p storage/framework/sessions \
     && mkdir -p storage/framework/cache \
     && mkdir -p bootstrap/cache
 
+# Instala extensões PHP necessárias
+    RUN apt-get update && apt-get install -y libicu-dev \
+    && docker-php-ext-install zip bcmath intl
+
+
 # Instala Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 RUN composer install --optimize-autoloader --no-dev
@@ -33,4 +38,4 @@ RUN chown -R www-data:www-data /app/storage /app/bootstrap/cache \
 RUN php artisan config:cache && php artisan route:cache && php artisan view:cache
 
 # Inicia o servidor (O Railway exige que ouça em 0.0.0.0)
-CMD php artisan serve --host=0.0.0.0 --port=$PORT
+CMD php artisan serve --host=0.0.0.0 --port=$PORT --verbose
