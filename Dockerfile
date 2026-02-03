@@ -18,6 +18,11 @@ RUN mkdir -p storage/framework/sessions \
     && mkdir -p storage/framework/cache \
     && mkdir -p bootstrap/cache
 
+
+# Instala extensão DOM necessária
+    RUN apt-get update && apt-get install -y libxml2-dev \
+    && docker-php-ext-install dom
+
 # Instala extensões PHP necessárias
     RUN apt-get update && apt-get install -y libicu-dev \
     && docker-php-ext-install zip bcmath intl
@@ -38,4 +43,4 @@ RUN chown -R www-data:www-data /app/storage /app/bootstrap/cache \
 RUN php artisan config:cache && php artisan route:cache && php artisan view:cache
 
 # Inicia o servidor (O Railway exige que ouça em 0.0.0.0)
-CMD php artisan serve --host=0.0.0.0 --port=$PORT --verbose
+CMD php -S 0.0.0.0:$PORT -t public
