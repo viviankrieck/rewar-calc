@@ -1,22 +1,26 @@
-FROM php:8.2-cli
+# Usa uma imagem com PHP + Node.js pré-instalados
+FROM laravelsail/php82-composer
 
-# Instalar dependências e extensão zip
+# Instala Node.js e npm
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
+    && apt-get install -y nodejs
+
+# Instala extensão zip
 RUN apt-get update && apt-get install -y \
     unzip \
     libzip-dev \
     && docker-php-ext-install zip
 
-# Instalar Composer
-COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
-
+# Define diretório de trabalho
 WORKDIR /app
 COPY . .
 
-# Instalar dependências Laravel
+# Instala dependências Laravel
 RUN composer install --optimize-autoloader --no-dev
 RUN php artisan config:cache && php artisan route:cache
 
-# Instalar dependências frontend
+# Instala dependências frontend
 RUN npm install && npm run build
 
+# Inicia o servidor Laravel
 CMD php artisan serve --host=0.0.0.0 --port=$PORT
