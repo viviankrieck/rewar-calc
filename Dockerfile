@@ -1,47 +1,36 @@
-# Usa uma imagem com PHP + Node.js pré-instalados
-FROM laravelsail/php82-composer
+# Mantendo sua base (mas PHP 8.2 oficial é mais leve para produção)
+FROM php:8.2-cli
 
-# Instala Node.js e npm
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
-    && apt-get install -y nodejs
-
-# Instala extensão zip
+# Instala dependências do sistema
 RUN apt-get update && apt-get install -y \
-    unzip \
-    libzip-dev \
+    libzip-dev unzip git nodejs npm \
     && docker-php-ext-install zip
 
 # Define diretório de trabalho
 WORKDIR /app
+
+# Copia os arquivos
 COPY . .
 
-# Ajusta permissões para diretórios de armazenamento e cache
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
-RUN chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
+# CRUCIAL: Cria as pastas que o Laravel exige (evita o erro que você teve no log)
+RUN mkdir -p storage/framework/sessions \
+    && mkdir -p storage/framework/views \
+    && mkdir -p storage/framework/cache \
+    && mkdir -p bootstrap/cache
 
-
-# Instala dependências Laravel
+# Instala Composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 RUN composer install --optimize-autoloader --no-dev
-RUN php artisan config:cache && php artisan route:cache
 
-# Publica assets do Livewire
-RUN php artisan livewire:publish --assets
-
-# Instala dependências Laravel com ignore-platform-req para ext-zip
-RUN composer install --ignore-platform-req=ext-zip --optimize-autoloader --no-dev
-
-# Instala dependências frontend
+# Instala Frontend
 RUN npm install && npm run build
 
-# Configura variáveis de ambiente
-RUN php artisan config:clear && php artisan config:cache
+# Ajusta permissões (Usando o diretório /app definido no WORKDIR)
+RUN chown -R www-data:www-data /app/storage /app/bootstrap/cache \
+    && chmod -R 775 /app/storage /app/bootstrap/cache
 
-# Configura views cache
-RUN php artisan view:clear && php artisan view:cache
-
-# Limpa e recacheia configurações, rotas e views
-RUN php artisan config:clear && php artisan route:clear && php artisan view:clear
+# Limpa qualquer cache residual e gera o novo
 RUN php artisan config:cache && php artisan route:cache && php artisan view:cache
 
-# Inicia o servidor Laravel
+# Inicia o servidor (O Railway exige que ouça em 0.0.0.0)
 CMD php artisan serve --host=0.0.0.0 --port=$PORT
