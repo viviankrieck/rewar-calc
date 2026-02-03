@@ -21,7 +21,4 @@ RUN npm ci && npm run build
 # Otimizar cache para produção
 RUN php artisan config:cache && php artisan route:cache && php artisan view:cache
 
-# Usar port do Railway via variável de ambiente
-EXPOSE ${PORT:-8080}
-
-CMD ["php", "-d", "display_errors=stderr", "-S", "0.0.0.0:${PORT:-8080}", "-t", "public"]
+CMD php -d display_errors=stderr -S 0.0.0.0:${PORT:-8080} -t public
