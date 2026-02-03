@@ -22,5 +22,8 @@ RUN php artisan config:cache && php artisan route:cache
 # Instala dependências frontend
 RUN npm install && npm run build
 
+# Configura variáveis de ambiente
+RUN php artisan config:clear && php artisan config:cache
+
 # Inicia o servidor Laravel
 CMD php artisan serve --host=0.0.0.0 --port=$PORT
