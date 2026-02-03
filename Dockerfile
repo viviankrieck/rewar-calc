@@ -31,5 +31,9 @@ RUN php artisan config:clear && php artisan config:cache
 # Configura views cache
 RUN php artisan view:clear && php artisan view:cache
 
+# Limpa e recacheia configurações, rotas e views
+RUN php artisan config:clear && php artisan route:clear && php artisan view:clear
+RUN php artisan config:cache && php artisan route:cache && php artisan view:cache
+
 # Inicia o servidor Laravel
 CMD php artisan serve --host=0.0.0.0 --port=$PORT
