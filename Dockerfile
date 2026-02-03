@@ -9,15 +9,14 @@ COPY . .
 RUN mkdir -p storage/framework/sessions storage/framework/views storage/framework/cache bootstrap/cache
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 RUN composer install --optimize-autoloader --no-dev
+
+# Instala dependências e gera assets
 RUN npm install && npm run build
 
-# Permissões totais para evitar erro 500 de escrita
+# Permissões para escrita
 RUN chmod -R 777 storage bootstrap/cache
 
-# Instala e gera assets
-RUN npm install && npm run build
-
-# Limpa caches de arquivos apenas
-RUN php artisan config:clear && php artisan route:clear && php artisan view:clear
+# Otimiza para produção
+RUN php artisan config:cache && php artisan route:cache && php artisan view:cache
 
 CMD php artisan serve --host=0.0.0.0 --port=$PORT
