@@ -5,7 +5,8 @@ RUN apt-get update && apt-get install -y nodejs npm
 
 # Instala extensão zip (necessária para Composer)
 RUN apt-get update && apt-get install -y \
-    unzip libzip-dev git nodejs npm \
+    unzip libzip-dev git nodejs \
+    libicu-dev libxml2-dev \
     && docker-php-ext-install zip bcmath intl dom
 
 WORKDIR /app
