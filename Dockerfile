@@ -1,14 +1,13 @@
 FROM laravelsail/php82-composer
 
 # Instala Node.js e npm
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
-    && apt-get install -y nodejs npm
+RUN apt-get update && apt-get install -y nodejs npm
 
 # Instala extensão zip (necessária para Composer)
 RUN apt-get update && apt-get install -y \
     unzip libzip-dev git nodejs npm \
     && docker-php-ext-install zip bcmath intl dom
-    
+
 WORKDIR /app
 COPY . .
 
