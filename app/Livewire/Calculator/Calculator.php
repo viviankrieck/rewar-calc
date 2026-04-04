@@ -10,7 +10,7 @@ class Calculator extends Component
     #[Validate('required', message: 'Insira um valor válido para calcular os pontos.')]
     public $points = null;
 
-    public $conversion_rate = 163.50; // Exemplo de taxa de conversão
+    public $conversion_rate = 172.20; // Exemplo de taxa de conversão
     public $calculated_points = null;
     public $points_in_value = null;
     public $selected_option = [

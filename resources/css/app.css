@@ -32,4 +32,7 @@
     --color-primary-800: #166534;
     --color-primary-900: #14532d;
     --color-primary-950: #052e16;
+
+    /* CUSTOM BREAKPOINTS */
+    --breakpoint-xs: 47 rem; /* 765px */
 }
