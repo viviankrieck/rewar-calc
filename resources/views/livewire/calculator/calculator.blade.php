@@ -8,9 +8,10 @@
         </div>
 
         <div class="mb-4">
-            <x-input type="number" wire:model="points" placeholder="Insira os pontos que deseja calcular" class="w-full"
-                invalidate>
-            </x-input>
+            <x-input type="text" wire:model.live.debounce.250ms="pointsMasked"
+                placeholder="Insira os pontos que deseja calcular" class="w-full pr-10" wire:loading.attr="disabled"
+                wire:loading.class="opacity-60 cursor-not-allowed" wire:target="calculatePoints"
+                wire:keydown.enter="calculatePoints"></x-input>
             <span class="text-yellow-200 text-sm mt-1">
                 @error('points')
                     {{ $message }}
@@ -18,10 +19,18 @@
             </span>
         </div>
         <div class="mb-4">
-            <x-button primary wire:click="calculatePoints" class="w-full">Calcular</x-button>
+            <x-button primary wire:click="calculatePoints" class="w-full" wire:loading.attr="disabled"
+                wire:loading.class="opacity-70 cursor-not-allowed" loading="calculatePoints">
+                <span wire:loading.remove wire:target="calculatePoints">Calcular</span>
+                <span wire:loading wire:target="calculatePoints" class="inline-flex items-center justify-center gap-2">
+                    Calculando...
+                </span>
+            </x-button>
         </div>
         @if ($points_in_value !== null)
             <div class="mt-4 p-5 bg-green-900/20 backdrop-blur-sm rounded-lg border border-green-700/40 shadow-lg">
+                <x-button icon="x-mark" circle flat class="absolute top-2 right-2 text-gray-300 hover:text-gray-100"
+                    wire:loading.attr="disabled" loading="closeResult" wire:click="closeResult"></x-button>
                 <h2 class="text-xl font-semibold mb-2 text-green-400">Resultado:</h2>
                 <p class="text-lg text-gray-200">Você pode resgatar até <span class="italic">aproximadamente</span>
                     <span class="font-bold text-green-300">R$
