@@ -4,13 +4,12 @@
 
 @source '../views';
 @source '../../vendor/tallstackui/tallstackui/**/*.php';
-@source "../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php";
-@source "../../vendor/robsontenorio/mary/src/View/**/*.php";
-@source "../../storage/framework/views/*.php";
-@source "../views/**/*.blade.php";
-@source "../../app/View/Components/*.php";
-@source "../../app/Livewire/**/*.php"
-
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../vendor/robsontenorio/mary/src/View/**/*.php';
+@source '../../storage/framework/views/*.php';
+@source '../views/**/*.blade.php';
+@source '../../app/View/Components/*.php';
+@source '../../app/Livewire/**/*.php';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
