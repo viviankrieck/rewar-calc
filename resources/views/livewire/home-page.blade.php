@@ -4,7 +4,8 @@
             class="bg-gradient-to-r from-green-400 via-green-500 to-green-600 bg-clip-text text-4xl sm:text-5xl font-extrabold text-transparent mt-6 text-center drop-shadow-lg">
             Calculadora de Pontos de Recompensa
         </h1>
-        <div class="flex flex-col sm:flex-row items-center sm:justify-between px-[6vw] gap-6">
+        <div
+            class="flex flex-col sm:flex-row items-center sm:justify-between px-[6vw] gap-6 overflow-auto max-h-[50vh] mt-8">
 
             <!-- Calculadora primeiro em mobile -->
             <div class="w-full sm:w-[45%] order-1 sm:order-2">
