@@ -43,6 +43,9 @@
             <p>
                 *** Esta calculadora é apenas uma estimativa e não garante o resgate dos prêmios.
             </p>
+            <p>
+                **** Pontos calculados com base no giftcard personalizado.
+            </p>
         </div>
 
     </x-card>
