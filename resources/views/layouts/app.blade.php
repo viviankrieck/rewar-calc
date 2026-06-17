@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" x-data="tallstackui_darkTheme()" x-init="darkTheme = true">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" x-init="darkTheme = true">
 
     <head>
         <meta charset="utf-8">
