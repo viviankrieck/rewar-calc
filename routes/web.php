@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'livewire.home-page')->name('home');
 
-Route::get('/teste', function () {
+Route::livewire('/teste', function () {
     return '<h1>Laravel em produção está respondendo!</h1>';
 });
 

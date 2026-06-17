@@ -8,6 +8,7 @@ use Livewire\Component;
 class Calculator extends Component
 {
     #[Validate('required', message: 'Insira um valor válido para calcular os pontos.')]
+    #[Validate('numeric', message: 'O valor dos pontos deve ser um número válido.')]
     public $points = null;
 
     public string $pointsMasked = '';

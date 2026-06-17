@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "../../vendor/tallstackui/tallstackui/css/v4.css";
+@plugin "daisyui";
 @import "./background.css";
 
 @source '../views';

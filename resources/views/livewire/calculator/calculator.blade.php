@@ -1,5 +1,5 @@
 <div class="text-center text-white">
-    <x-card class="bg-black/40 backdrop-blur-sm shadow-2xl border border-green-900/30 w-full">
+    <div class="card bg-black/40 backdrop-blur-sm shadow-2xl border border-green-900/30 w-full p-5">
         <div class="grid grid-flow-col justify-items-center">
             <div>
                 <h1 class="text-3xl font-bold mb-2 text-green-400">Cartão presente</h1>
@@ -7,11 +7,25 @@
             </div>
         </div>
 
-        <div class="mb-4">
-            <x-input type="text" wire:model.live.debounce.250ms="pointsMasked"
-                placeholder="Insira os pontos que deseja calcular" class="w-full pr-10" wire:loading.attr="disabled"
-                wire:loading.class="opacity-60 cursor-not-allowed" wire:target="calculatePoints"
-                wire:keydown.enter="calculatePoints"></x-input>
+        <div class="mb-4" x-data="{
+            display: '',
+            update(value) {
+                const digits = value.replace(/\D/g, '');
+        
+                $wire.points = digits ? Number(digits) : null;
+        
+                this.display = digits ?
+                    Number(digits).toLocaleString('pt-BR') :
+                    '';
+            }
+        }">
+            <input type="text" class="input input-bordered w-full" placeholder="Insira os pontos" x-model="display"
+                wire:loading.attr="disabled" wire:loading.class="opacity-60 cursor-not-allowed"
+                wire:target="calculatePoints" wire:keydown.enter="calculatePoints" @input="update($event.target.value)">
+            {{-- <input type="number" wire:model.live.debounce.250ms="points"
+                placeholder="Insira os pontos que deseja calcular" class="w-full pr-10 input"
+                wire:loading.attr="disabled" wire:loading.class="opacity-60 cursor-not-allowed"
+                wire:target="calculatePoints" wire:keydown.enter="calculatePoints"></input> --}}
             <span class="text-yellow-200 text-sm mt-1">
                 @error('points')
                     {{ $message }}
@@ -19,18 +33,21 @@
             </span>
         </div>
         <div class="mb-4">
-            <x-button primary wire:click="calculatePoints" class="w-full" wire:loading.attr="disabled"
+            <button wire:click="calculatePoints"
+                class="w-full btn btn-soft bg-green-700 text-green-100 hover:bg-green-800" wire:loading.attr="disabled"
                 wire:loading.class="opacity-70 cursor-not-allowed" loading="calculatePoints">
                 <span wire:loading.remove wire:target="calculatePoints">Calcular</span>
                 <span wire:loading wire:target="calculatePoints" class="inline-flex items-center justify-center gap-2">
                     Calculando...
                 </span>
-            </x-button>
+            </button>
         </div>
         @if ($points_in_value !== null)
-            <div class="mt-4 p-5 bg-green-900/20 backdrop-blur-sm rounded-lg border border-green-700/40 shadow-lg">
-                <x-button icon="x-mark" circle flat class="absolute top-2 right-2 text-gray-300 hover:text-gray-100"
-                    wire:loading.attr="disabled" loading="closeResult" wire:click="closeResult"></x-button>
+            <div class="mt-4 p-5 bg-green-900/20 backdrop-blur-sm rounded-lg border border-green-700/40 shadow-lg"
+                wire:loading.class="opacity-50 cursor-not-allowed" wire:target="calculatePoints"
+                wire:loading.attr="disabled">
+                <button class="btn btn-ghost btn-circle btn-xs absolute top-2 right-2 text-gray-300 hover:text-gray-100"
+                    wire:loading.attr="disabled" loading="closeResult" wire:click="closeResult">X</button>
                 <h2 class="text-xl font-semibold mb-2 text-green-400">Resultado:</h2>
                 <p class="text-lg text-gray-200">Você pode resgatar até <span class="italic">aproximadamente</span>
                     <span class="font-bold text-green-300">R$
@@ -57,5 +74,5 @@
             </p>
         </div>
 
-    </x-card>
+    </div>
 </div>
