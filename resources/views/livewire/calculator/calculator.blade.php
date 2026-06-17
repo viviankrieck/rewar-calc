@@ -12,7 +12,7 @@
             update(value) {
                 const digits = value.replace(/\D/g, '');
         
-                $wire.points = digits ? Number(digits) : null;
+                $wire.set('points', digits ? Number(digits) : null);
         
                 this.display = digits ?
                     Number(digits).toLocaleString('pt-BR') :

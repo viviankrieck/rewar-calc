@@ -7,8 +7,20 @@ use Livewire\Component;
 
 class Calculator extends Component
 {
-    #[Validate('required', message: 'Insira um valor válido para calcular os pontos.')]
-    #[Validate('numeric', message: 'O valor dos pontos deve ser um número válido.')]
+    protected function rules()
+    {
+        return [
+            'points' => ['required', 'numeric'],
+        ];
+    }
+
+    protected function messages()
+    {
+        return [
+            'points.required' => 'Insira um valor válido para calcular os pontos.',
+            'points.numeric' => 'O valor dos pontos deve ser um número válido.',
+        ];
+    }
     public $points = null;
 
     public string $pointsMasked = '';
