@@ -27,7 +27,7 @@
         <livewire:home.navbar />
 
         <!-- Conteúdo principal -->
-        <main class="flex-1 overflow-auto sm:max-h-[calc(100vh-120px)] max-h-[calc(100vh-185px)]">
+        <main class="flex-1 overflow-auto sm:max-h-[calc(100vh-120px)] max-h-[calc(100vh-200px)]">
             {{ $slot }}
         </main>
 
