@@ -8,7 +8,7 @@
                     Calculadora de Pontos de Recompensa
                 </h1>
             </div>
-            <div class="flex justify-center md:justify-evenly gap-6 flex-wrap md:mx-10 mx-2 mt-2 mb-10">
+            <div class="flex justify-center md:justify-evenly gap-6 flex-wrap md:mx-10 mx-2 mt-2 mb-5">
 
                 <!-- Calculadora primeiro em mobile -->
                 <div class="w-full sm:w-[45%] order-1 sm:order-2 flex-1 md:flex-3">
