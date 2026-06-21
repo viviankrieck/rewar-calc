@@ -220,22 +220,6 @@ body::after {
     }
 }
 
-/* Classes utilitárias para aplicar os efeitos */
-.apply-neon-bg {
-    position: relative;
-}
-
-.apply-neon-bg::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-    z-index: 0;
-}
-
 /* Efeitos responsivos */
 @media (max-width: 768px) {
     .neon-hexagon {
@@ -289,10 +273,6 @@ body::after {
 /* Adicionar alguns elementos decorativos sutis */
 body {
     position: relative;
-}
-
-body::before {
-    backdrop-filter: blur(0.5px);
 }
 
 /* Linhas diagonais decorativas */

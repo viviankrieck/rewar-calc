@@ -17,14 +17,14 @@
 
                 <!-- Componente de moeda abaixo em mobile -->
                 <div class="w-full sm:w-[45%] order-2 sm:order-1">
-                    <div class="bg-black/40 backdrop-blur-sm p-8 rounded-xl shadow-2xl border border-green-900/30">
+                    <div class=" p-8 rounded-xl bg-glass">
                         <div class="mb-6 flex justify-center">
                             <livewire:components.coin />
                         </div>
-                        <p class="text-lg mb-4 text-gray-200 leading-relaxed text-center">
+                        <p class="text-xl mb-4 text-gray-200 leading-relaxed text-center">
                             Descubra o valor dos seus pontos de recompensa e veja o que você pode resgatar!
                         </p>
-                        <p class="text-md text-gray-300 text-center sm:text-left">
+                        <p class="text-md text-gray-300 text-center">
                             Use nossa calculadora simples para converter seus pontos em valores reais.
                         </p>
                     </div>

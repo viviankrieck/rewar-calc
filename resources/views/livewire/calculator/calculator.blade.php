@@ -1,5 +1,5 @@
 <div class="text-center text-white">
-    <div class="card bg-black/40 backdrop-blur-sm shadow-2xl border border-green-900/30 w-full p-5">
+    <div class="card bg-glass w-full p-5">
         <div class="grid grid-flow-col justify-items-center">
             <div>
                 <h1 class="text-3xl font-bold mb-2 text-green-400">Cartão presente</h1>
@@ -39,7 +39,7 @@
             </button>
         </div>
         @if ($points_in_value !== null)
-            <div class="mt-4 p-5 bg-green-900/20 backdrop-blur-sm rounded-lg border border-green-700/40 shadow-lg"
+            <div class="mt-4 p-5 bg-green-900/20 rounded-lg border border-green-700/40 shadow-lg"
                 wire:loading.class="opacity-50 cursor-not-allowed" wire:target="calculatePoints"
                 wire:loading.attr="disabled">
                 <button class="btn btn-ghost btn-circle btn-xs absolute top-2 right-2 text-gray-300 hover:text-gray-100"
