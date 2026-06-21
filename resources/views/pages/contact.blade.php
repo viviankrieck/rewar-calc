@@ -15,6 +15,10 @@
                     <label for="subject">Assunto</label>
 
                     <input type="text" id="subject" wire:model="subject" class="input">
+
+                    @error('subject')
+                        <span class="text-red-500 text-xs">{{ $message }}</span>
+                    @enderror
                 </div>
                 <div class="mb-4">
                     <label for="name" class="block text-sm font-medium text-gray-500">Nome</label>

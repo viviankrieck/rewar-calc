@@ -31,6 +31,7 @@
         "barryvdh/laravel-debugbar": "^3.15",
         "fakerphp/faker": "^1.23",
         "larastan/larastan": "^3.1",
+        "laravel-lang/lang": "^15.31",
         "laravel/breeze": "^2.3",
         "laravel/pail": "^1.2.2",
         "laravel/pint": "^1.21",
