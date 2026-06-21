@@ -21,46 +21,64 @@
 
 A **RewarCalc** é uma ferramenta independente desenvolvida para gamers que participam do programa Xbox Rewards. Esta aplicação web moderna ajuda você a:
 
--   💰 **Calcular o valor real** dos seus pontos Xbox Rewards
--   🛍️ **Descobrir as melhores trocas** disponíveis no catálogo
--   📊 **Comparar recompensas** e encontrar o melhor custo-benefício
--   ⏱️ **Economizar tempo** sem precisar navegar pelo app oficial
+- 💰 **Calcular o valor real** dos seus pontos Xbox Rewards
+- 🛍️ **Descobrir as melhores trocas** disponíveis no catálogo
+- 📊 **Comparar recompensas** e encontrar o melhor custo-benefício
+- ⏱️ **Economizar tempo** sem precisar navegar pelo app oficial
 
 > **Nota importante**: Este é um projeto independente criado por e para a comunidade gamer. Não possui qualquer vínculo oficial com a Microsoft, Xbox ou o programa Xbox Rewards.
 
 ### ✨ Funcionalidades
 
--   🎯 **Calculadora de Pontos Xbox** - Conversão precisa de pontos para valores em reais
--   🛒 **Catálogo de Recompensas** - Lista atualizada com gift cards, jogos e DLCs
--   💳 **Gift Cards Populares** - Xbox Gift Card, Steam, PlayStation, Nintendo eShop
--   🎮 **Jogos e Conteúdo** - Game Pass, jogos AAA, expansões e season passes
--   📊 **Comparador de Ofertas** - Encontre as trocas com melhor custo-benefício
--   🔍 **Busca Inteligente** - Filtre por categoria, valor ou pontos necessários
--   🌙 **Modo Escuro/Claro** - Interface adaptável com tema automático
--   📱 **Design Responsivo** - Funciona perfeitamente em qualquer dispositivo
--   ⚡ **Cálculos Instantâneos** - Resultados em tempo real sem recarregar a página
--   🎨 **Interface Gamer** - Design moderno com efeitos neon e animações
+- 🎯 **Calculadora de Pontos Xbox** - Conversão precisa de pontos para valores em reais
+- 🛒 **Catálogo de Recompensas** - Lista atualizada com gift cards, jogos e DLCs
+- 💳 **Gift Cards Populares** - Xbox Gift Card, Steam, PlayStation, Nintendo eShop
+- 🎮 **Jogos e Conteúdo** - Game Pass, jogos AAA, expansões e season passes
+- 📊 **Comparador de Ofertas** - Encontre as trocas com melhor custo-benefício
+- 🔍 **Busca Inteligente** - Filtre por categoria, valor ou pontos necessários
+- 🌙 **Modo Escuro/Claro** - Interface adaptável com tema automático
+- 📱 **Design Responsivo** - Funciona perfeitamente em qualquer dispositivo
+- ⚡ **Cálculos Instantâneos** - Resultados em tempo real sem recarregar a página
+- 🎨 **Interface Gamer** - Design moderno com efeitos neon e animações
+
+### 🔄 Implementações e atualizações recentes
+
+- **Calculadora Livewire completa:** componente `Calculator` com validação, input mascarado
+  e cálculo de conversão. Veja o código em [app/Livewire/Calculator/Calculator.php](app/Livewire/Calculator/Calculator.php#L1)
+  e a view em [resources/views/livewire/calculator/calculator.blade.php](resources/views/livewire/calculator/calculator.blade.php#L1).
+- **Página inicial e layout parcial:** `HomePage`, `Navbar` e `Footer` via Livewire.
+  Componentes em [app/Livewire/HomePage.php](app/Livewire/HomePage.php#L1) e
+  [app/Livewire/Home/Navbar.php](app/Livewire/Home/Navbar.php#L1).
+- **Envio de e-mail (Brevo):** Mailable `ContactMail`. Arquivo: [app/Mail/ContactMail.php](app/Mail/ContactMail.php#L1)
+  e view em [resources/views/emails/contact.blade.php](resources/views/emails/contact.blade.php#L1).
+- **Configuração pronta para SMTP/Brevo:** variáveis em `.env` (`MAIL_MAILER=brevo`,
+  `BREVO_API_KEY`) prontas para uso. Veja [/.env](.env#L1) (cuidado com credenciais).
+- **Banco SQLite para desenvolvimento:** migrations e seeders já previstos; crie
+  `database/database.sqlite` e rode `php artisan migrate --seed`.
+- **Build/Dev configurados:** `npm run dev`, `npm run build` (Vite + Tailwind/DaisyUI)
+  e comandos de desenvolvimento combinados em `composer run dev`.
 
 ### 🛠️ Tecnologias Utilizadas
 
--   **Backend**: Laravel 12
--   **Frontend**: Livewire 3 + Alpine.js
--   **Styling**: TailwindCSS 4 + TallStackUI
--   **Build**: Vite
--   **Database**: SQLite
--   **Testing**: Pest + PHPUnit
+- **Backend**: Laravel 12
+- **Frontend**: Livewire 3 + Alpine.js
+- **Styling**: TailwindCSS 4
+- **Styling**: TailwindCSS 4 + DaisyUI
+- **Build**: Vite
+- **Database**: SQLite
+- **Testing**: Pest + PHPUnit
 
 ## 🎨 Interface
 
 A aplicação possui um design inspirado no universo gamer com elementos futuristas:
 
--   ✨ **Linha neon animada** no topo com efeito pulsante
--   🔷 **Hexágono rotativo** com brilho dinâmico representando conquistas
--   💫 **Padrão de pontos** com fade suave simulando rewards coletados
--   🌌 **Background gradiente** que remete aos temas dark dos jogos
--   🔄 **Micro-animações** que tornam a experiência mais envolvente
--   🎯 **Calculadora centralizada** com foco na usabilidade
--   📊 **Visualização clara** dos resultados e comparações
+- ✨ **Linha neon animada** no topo com efeito pulsante
+- 🔷 **Hexágono rotativo** com brilho dinâmico representando conquistas
+- 💫 **Padrão de pontos** com fade suave simulando rewards coletados
+- 🌌 **Background gradiente** que remete aos temas dark dos jogos
+- 🔄 **Micro-animações** que tornam a experiência mais envolvente
+- 🎯 **Calculadora centralizada** com foco na usabilidade
+- 📊 **Visualização clara** dos resultados e comparações
 
 ### 🖼️ Screenshots
 
@@ -70,10 +88,10 @@ A aplicação possui um design inspirado no universo gamer com elementos futuris
 
 ### Pré-requisitos
 
--   PHP >= 8.2
--   Composer
--   Node.js >= 16
--   NPM ou Yarn
+- PHP >= 8.2
+- Composer
+- Node.js >= 16
+- NPM ou Yarn
 
 ### Passos de Instalação
 
@@ -217,18 +235,18 @@ php artisan rewards:update
 
 ### 🚧 Em Desenvolvimento
 
--   [ ] **Database de Recompensas** - Catálogo completo e atualizado
--   [ ] **Histórico de Conversões** - Acompanhe suas trocas
--   [ ] **Favoritos** - Salve as recompensas que mais interessam
--   [ ] **Notificações** - Alertas quando pontos suficientes para uma recompensa
+- [ ] **Database de Recompensas** - Catálogo completo e atualizado
+- [ ] **Histórico de Conversões** - Acompanhe suas trocas
+- [ ] **Favoritos** - Salve as recompensas que mais interessam
+- [ ] **Notificações** - Alertas quando pontos suficientes para uma recompensa
 
 ### 🔮 Futuras Implementações
 
--   [ ] **API de Integração** - Conecte com sua conta Xbox (se possível)
--   [ ] **Comparador de Preços** - Compare com lojas oficiais
--   [ ] **Calculadora de Tempo** - Estime quanto tempo para juntar pontos
--   [ ] **Sistema de Ranking** - Melhores ofertas do mês
--   [ ] **PWA** - App instalável no celular
+- [ ] **API de Integração** - Conecte com sua conta Xbox (se possível)
+- [ ] **Comparador de Preços** - Compare com lojas oficiais
+- [ ] **Calculadora de Tempo** - Estime quanto tempo para juntar pontos
+- [ ] **Sistema de Ranking** - Melhores ofertas do mês
+- [ ] **PWA** - App instalável no celular
 
 ## 🤝 Contribuição
 
@@ -244,21 +262,21 @@ Contribuições são sempre bem-vindas! Este projeto é feito pela comunidade ga
 
 ### 💡 Tipos de Contribuição
 
--   🆕 **Novas recompensas** no catálogo
--   🐛 **Correções de bugs** ou cálculos
--   💅 **Melhorias na UI/UX**
--   📊 **Funcionalidades** para comparação
--   📝 **Documentação** e tutoriais
--   🧪 **Testes** automatizados
+- 🆕 **Novas recompensas** no catálogo
+- 🐛 **Correções de bugs** ou cálculos
+- 💅 **Melhorias na UI/UX**
+- 📊 **Funcionalidades** para comparação
+- 📝 **Documentação** e tutoriais
+- 🧪 **Testes** automatizados
 
 ### 📝 Padrões de Commit
 
--   `feat:` Nova funcionalidade
--   `fix:` Correção de bug
--   `docs:` Documentação
--   `style:` Formatação
--   `refactor:` Refatoração
--   `test:` Testes
+- `feat:` Nova funcionalidade
+- `fix:` Correção de bug
+- `docs:` Documentação
+- `style:` Formatação
+- `refactor:` Refatoração
+- `test:` Testes
 
 ## 📄 Licença
 
@@ -268,28 +286,28 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 **Vivian Pereira**
 
--   GitHub: [@vivian](https://github.com/viviankrieck)
--   Email: vivian_pereira@outlook.com.br
+- GitHub: [@vivian](https://github.com/viviankrieck)
+- Email: vivian_pereira@outlook.com.br
 
 ## ⚖️ Disclaimer
 
 Este projeto é **independente** e **não possui qualquer afiliação** com:
 
--   Microsoft Corporation
--   Xbox ou Xbox Game Studios
--   Programa Xbox Rewards
--   Qualquer marca ou produto mencionado
+- Microsoft Corporation
+- Xbox ou Xbox Game Studios
+- Programa Xbox Rewards
+- Qualquer marca ou produto mencionado
 
 O RewarCalc é uma ferramenta **não-oficial** criada pela comunidade para ajudar gamers a entender melhor o valor de seus pontos. Todas as informações são baseadas em dados públicos e podem não refletir valores exatos ou atualizados.
 
 ## 🙏 Agradecimentos
 
--   🎮 **Comunidade Gamer** - Por inspirar este projeto
--   [Laravel](https://laravel.com) - Framework PHP robusto
--   [Livewire](https://laravel-livewire.com) - Componentes reativos
--   [TallStackUI](https://tallstackui.com) - Componentes UI modernos
--   [TailwindCSS](https://tailwindcss.com) - Framework CSS utilitário
--   🎨 **Animista.net** - Animações CSS incríveis
+- 🎮 **Comunidade Gamer** - Por inspirar este projeto
+- [Laravel](https://laravel.com) - Framework PHP robusto
+- [Livewire](https://laravel-livewire.com) - Componentes reativos
+- [DaisyUI](https://daisyui.com) - Componentes UI modernos
+- [TailwindCSS](https://tailwindcss.com) - Framework CSS utilitário
+- 🎨 **Animista.net** - Animações CSS incríveis
 
 ---
 

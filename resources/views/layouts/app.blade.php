@@ -14,6 +14,7 @@
         <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <link href="/src/style.css" rel="stylesheet">
 
         @livewireStyles
         @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -26,7 +27,7 @@
         <livewire:home.navbar />
 
         <!-- Conteúdo principal -->
-        <main class="flex-1 overflow-hidden relative z-10">
+        <main class="flex-1 overflow-auto max-h-[calc(100vh-150px)]">
             {{ $slot }}
         </main>
 

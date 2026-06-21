@@ -22,10 +22,6 @@
             <input type="text" class="input input-bordered w-full" placeholder="Insira os pontos" x-model="display"
                 wire:loading.attr="disabled" wire:loading.class="opacity-60 cursor-not-allowed"
                 wire:target="calculatePoints" wire:keydown.enter="calculatePoints" @input="update($event.target.value)">
-            {{-- <input type="number" wire:model.live.debounce.250ms="points"
-                placeholder="Insira os pontos que deseja calcular" class="w-full pr-10 input"
-                wire:loading.attr="disabled" wire:loading.class="opacity-60 cursor-not-allowed"
-                wire:target="calculatePoints" wire:keydown.enter="calculatePoints"></input> --}}
             <span class="text-yellow-200 text-sm mt-1">
                 @error('points')
                     {{ $message }}

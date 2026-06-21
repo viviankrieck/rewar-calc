@@ -22,7 +22,8 @@
                         class="hover:underline hover:text-green-400 transition-colors me-4 md:me-6">Licensing</a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline hover:text-green-400 transition-colors">Contact</a>
+                    <a href="/contact" wire:navigate
+                        class="hover:underline hover:text-green-400 transition-colors">Contact</a>
                 </li>
             </ul>
         </div>
