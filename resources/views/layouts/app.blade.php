@@ -20,7 +20,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
 
-    <body class="font-sans antialiased dark" x-bind:class="{ 'dark': darkTheme }">
+    <body class="font-sans antialiased dark min-h-screen flex flex-col" x-bind:class="{ 'dark': darkTheme }">
 
         <!-- Navbar Simples -->
         <livewire:home.navbar />
