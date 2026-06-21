@@ -1,6 +1,6 @@
 <div>
     <x-app-layout>
-        <div class="overflow-auto max-h-[calc(100vh-150px)]">
+        <div>
             <div
                 class="bg-gradient-to-r from-green-900/40 to-green-900/20 backdrop-blur-sm shadow-2xl py-2 border border-green-900/30">
                 <h1
