@@ -1,32 +1,38 @@
-<div>
-    <footer
-        class="fixed bottom-0 z-20 w-full p-4 border-t shadow-lg flex items-center justify-center md:p-6 bg-black/60 backdrop-blur-md border-green-900/40">
-        <div>
-            <div class="flex flex-row text-sm text-gray-300">
-                <img src="{{ asset('/assets/images/logo-1.png') }}" alt="logo" width="80px" />
-                © 2025 &nbsp;
-                <a href="#" class="hover:underline hover:text-green-400 transition-colors">RewaCalc™</a>
-                . All Rights Reserved.
+<footer class="fixed bottom-0 z-20 w-full border-t border-green-500/10 bg-black/40 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex flex-col sm:flex-row items-center justify-between gap-3">
+
+        <div class="flex items-center gap-3">
+            <img src="{{ asset('/assets/images/logo-1-light.png') }}" alt="RewaCalc" class="h-9 w-auto" />
+
+            <div class="leading-tight">
+                <p class="text-sm font-semibold text-gray-200">
+                    RewaCalc™
+                </p>
+                <p class="text-xs text-gray-500">
+                    Reward Calculator
+                </p>
             </div>
-            <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-400 sm:mt-0">
+        </div>
+
+        <nav>
+            <ul class="flex items-center gap-6 text-sm text-gray-400">
                 <li>
-                    <a href="#"
-                        class="hover:underline hover:text-green-400 transition-colors me-4 md:me-6">About</a>
+                    <a href="/" wire:navigate class="hover:text-green-400 transition-colors">
+                        Início
+                    </a>
                 </li>
+
                 <li>
-                    <a href="#"
-                        class="hover:underline hover:text-green-400 transition-colors me-4 md:me-6">Privacy Policy</a>
-                </li>
-                <li>
-                    <a href="#"
-                        class="hover:underline hover:text-green-400 transition-colors me-4 md:me-6">Licensing</a>
-                </li>
-                <li>
-                    <a href="/contact" wire:navigate
-                        class="hover:underline hover:text-green-400 transition-colors">Contact</a>
+                    <a href="/contact" wire:navigate class="hover:text-green-400 transition-colors">
+                        Contato
+                    </a>
                 </li>
             </ul>
-        </div>
-    </footer>
+        </nav>
 
-</div>
+        <div class="text-xs text-gray-500">
+            © 2025 RewaCalc™
+        </div>
+
+    </div>
+</footer>
