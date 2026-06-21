@@ -1,6 +1,6 @@
 <div>
     <x-app-layout>
-        <div class="overflow-auto max-h-[calc(100vh-150px)]">
+        <div>
             <div
                 class="bg-gradient-to-r from-green-900/40 to-green-900/20 backdrop-blur-sm shadow-2xl py-2 border border-green-900/30">
                 <h1
@@ -8,16 +8,16 @@
                     Calculadora de Pontos de Recompensa
                 </h1>
             </div>
-            <div class="flex flex-col sm:flex-row items-center sm:justify-between px-[6vw] gap-6 mt-8">
+            <div class="flex justify-center md:justify-evenly gap-6 flex-wrap md:mx-10 mx-2 mt-2 mb-10">
 
                 <!-- Calculadora primeiro em mobile -->
-                <div class="w-full sm:w-[45%] order-1 sm:order-2">
+                <div class="w-full sm:w-[45%] order-1 sm:order-2 flex-1 md:flex-3">
                     <livewire:calculator.calculator />
                 </div>
 
                 <!-- Componente de moeda abaixo em mobile -->
-                <div class="w-full sm:w-[45%] order-2 sm:order-1">
-                    <div class=" p-8 rounded-xl bg-glass">
+                <div class="w-full sm:w-[45%] order-2 sm:order-1 h-full md:flex-4">
+                    <div class="p-8 rounded-xl bg-glass">
                         <div class="mb-6 flex justify-center">
                             <livewire:components.coin />
                         </div>

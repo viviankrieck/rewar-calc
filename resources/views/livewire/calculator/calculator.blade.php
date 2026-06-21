@@ -1,5 +1,5 @@
 <div class="text-center text-white">
-    <div class="card bg-glass w-full p-5">
+    <div class="card bg-glass w-full p-5 h-full rounded-xl">
         <div class="grid grid-flow-col justify-items-center">
             <div>
                 <h1 class="text-3xl font-bold mb-2 text-green-400">Cartão presente</h1>
