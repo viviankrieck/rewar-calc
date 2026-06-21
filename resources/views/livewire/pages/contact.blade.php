@@ -1,12 +1,11 @@
 <div>
     <div class="text-center mt-10">
-        <h1 class="text-4xl font-bold text-green-600">Fale Conosco</h1>
+        <h1 class="text-4xl md:text-5xl title-gradient">Fale Conosco</h1>
         <p class="mt-4 text-lg text-gray-300">Estamos aqui para ajudar! Envie sua mensagem e entraremos em contato o mais
             breve possível.</p>
     </div>
     <div class="flex justify-center md:justify-evenly gap-6 flex-wrap md:mx-10 mx-1 mt-2 mb-10">
-        <div
-            class="card max-w-4xl mx-auto p-2 rounded-lg shadow-md bg-black/50 backdrop-blur-sm shadow-2xl border border-green-900/30 mt-2 md:flex-5">
+        <div class="card max-w-4xl mx-auto p-2 rounded-lg bg-glass mt-2 md:flex-5">
             <div class="card-body">
                 <h1 class="text-3xl font-bold mb-4">Contato</h1>
                 <p class="mb-4">Em caso de dúvidas, sugestões ou feedback, sinta-se à vontade para nos contatar!</p>
@@ -67,8 +66,7 @@
                 </form>
             </div>
         </div>
-        <div
-            class="card max-w-4xl mx-auto rounded-lg shadow-md bg-black/50 backdrop-blur-sm shadow-2xl border border-green-900/30 mt-2 md:flex-1 h-max">
+        <div class="card max-w-4xl mx-auto rounded-lg bg-glass mt-2 md:flex-1 h-max">
             <div class="card-body">
                 <h2 class="text-xl font-bold mb-4">Outros Canais de Contato</h2>
                 <p class="mb-4">Além do formulário acima, você também pode nos contatar através dos seguintes canais:

@@ -32,6 +32,6 @@ class AuthenticatedSessionController
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect(route('home', absolute: false));
     }
 }

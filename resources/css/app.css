@@ -44,3 +44,12 @@
     /* CUSTOM BREAKPOINTS */
     --breakpoint-xs: 47 rem; /* 765px */
 }
+
+/* Custom Utilities */
+@utility bg-glass {
+    @apply shadow-md bg-black/60 backdrop-blur-lg border border-green-900/30;
+}
+
+@utility title-gradient {
+    @apply font-black bg-gradient-to-r from-green-400 via-green-500 to-emerald-700 bg-clip-text text-transparent;
+}

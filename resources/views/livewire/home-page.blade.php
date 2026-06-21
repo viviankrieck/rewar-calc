@@ -4,7 +4,7 @@
             <div
                 class="bg-gradient-to-r from-green-900/40 to-green-900/20 backdrop-blur-sm shadow-2xl py-2 border border-green-900/30">
                 <h1
-                    class="bg-gradient-to-r from-green-400 via-green-500 to-green-600 bg-clip-text text-4xl sm:text-5xl font-extrabold text-transparent text-center drop-shadow-lg">
+                    class="title-gradient text-4xl sm:text-5xl font-extrabold text-transparent text-center drop-shadow-lg">
                     Calculadora de Pontos de Recompensa
                 </h1>
             </div>

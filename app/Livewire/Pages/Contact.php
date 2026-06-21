@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Pages;
+namespace App\Livewire\Pages;
 
 use App\Mail\ContactMail;
 use Illuminate\Support\Facades\Mail;
@@ -41,6 +41,6 @@ class Contact extends Component
     }
     public function render()
     {
-        return view('pages.contact');
+        return view('livewire.pages.contact');
     }
 }

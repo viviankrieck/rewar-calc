@@ -2,11 +2,9 @@
     <div class="max-w-7xl mx-auto px-6 py-3 flex flex-col sm:flex-row items-center justify-between gap-3">
 
         <div class="flex items-center gap-3">
-            <img src="{{ asset('/assets/images/logo-1-light.png') }}" alt="RewaCalc" class="h-9 w-auto" />
-
             <div class="leading-tight">
                 <p class="text-sm font-semibold text-gray-200">
-                    RewaCalc™
+                    RewarCalc™
                 </p>
                 <p class="text-xs text-gray-500">
                     Reward Calculator
@@ -17,13 +15,19 @@
         <nav>
             <ul class="flex items-center gap-6 text-sm text-gray-400">
                 <li>
-                    <a href="/" wire:navigate class="hover:text-green-400 transition-colors">
+                    <a href="{{ route('home') }}" wire:navigate class="hover:text-green-400 transition-colors">
                         Início
                     </a>
                 </li>
 
                 <li>
-                    <a href="/contact" wire:navigate class="hover:text-green-400 transition-colors">
+                    <a href="{{ route('about') }}" wire:navigate class="hover:text-green-400 transition-colors">
+                        Sobre nós
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ route('contact') }}" wire:navigate class="hover:text-green-400 transition-colors">
                         Contato
                     </a>
                 </li>
@@ -31,7 +35,7 @@
         </nav>
 
         <div class="text-xs text-gray-500">
-            © 2025 RewaCalc™
+            © 2025 RewarCalc™
         </div>
 
     </div>

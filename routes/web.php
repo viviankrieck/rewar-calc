@@ -1,11 +1,13 @@
 <?php
 
+use App\Livewire\Pages\About;
 use App\Mail\ContactMail;
-use App\Pages\Contact;
+use App\Livewire\Pages\Contact;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'livewire.home-page')->name('home');
 Route::get('/contact', Contact::class)->name('contact');
+Route::get('/about', About::class)->name('about');
 
 
 /* NOTE: rota para visualizar o layout do e-mail diretamente no navegador, sem precisar enviar de fato.

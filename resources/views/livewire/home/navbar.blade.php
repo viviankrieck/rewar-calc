@@ -4,10 +4,10 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo/Título -->
-                <div class="flex items-center cursor-pointer" @click="Livewire.navigate('/')">
+                <div class="flex items-center cursor-pointer" @click="Livewire.navigate('{{ route('home') }}')">
                     <img src="{{ asset('/assets/images/logo-2.png') }}" alt="logo" width="30px"
                         class="drop-shadow-lg" />
-                    <h1 class="text-xl font-semibold text-green-400 ml-2">
+                    <h1 class="text-xl title-gradient ml-2">
                         Calculadora de Pontos
                     </h1>
                 </div>
