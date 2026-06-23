@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Livewire\Calculator;
+namespace App\Livewire\Components;
 
-use Livewire\Attributes\Validate;
 use Livewire\Component;
 
 class Calculator extends Component
@@ -70,7 +69,7 @@ class Calculator extends Component
 
     public function render()
     {
-        return view('livewire.calculator.calculator');
+        return view('livewire.components.calculator');
     }
 
     public function calculatePoints()

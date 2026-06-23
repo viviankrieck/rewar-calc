@@ -177,14 +177,18 @@ composer format
 ```
 app/
 ├── Livewire/
-│   ├── Calculator/     # Calculadora de pontos Xbox
-│   │   └── Calculator.php
-│   ├── Home/          # Página inicial e navegação
-│   │   ├── Navbar.php
-│   │   └── Footer.php
-│   └── User/          # Sistema de usuários (opcional)
-├── Models/            # Modelos para rewards e conversões
-└── View/Components/   # Componentes reutilizáveis
+│   ├── components/  # Componentes reutilizáveis
+│   │   └── calculator.php  # Calculadora de pontos Xbox
+│   │   └── coin.php
+│   │   └── home/ # Componentes da página inicial e navegação
+│   │       └── footer
+│   │       └── navbar
+│   ├── pages/
+│   │   ├── about.php
+│   │   └── contact.php
+│   │   └── home.php
+└── Models/            # Modelos para rewards e conversões
+
 
 resources/
 ├── css/
@@ -194,8 +198,17 @@ resources/
 │   └── app.js         # Interações + Alpine.js
 └── views/
     └── livewire/      # Templates dos componentes
-        ├── calculator/
-        └── home/
+        ├── components/  # Componentes reutilizáveis
+        │   │   └── calculator.php  # Calculadora de pontos Xbox
+        │   │   └── coin.php
+        │   │   └── home/ # Componentes da página inicial e navegação
+        │   │       └── footer
+        │   │       └── navbar
+        └──── pages/
+                ├── about.php
+                ├── contact.php
+                └── home.php
+
 
 database/
 ├── migrations/        # Estrutura do banco (rewards, conversões)

@@ -39,17 +39,20 @@
             </button>
         </div>
         @if ($points_in_value !== null)
-            <div class="mt-4 p-5 bg-green-900/20 rounded-lg border border-green-700/40 shadow-lg"
-                wire:loading.class="opacity-50 cursor-not-allowed" wire:target="calculatePoints"
+            <div class="mt-4 p-5 bg-green-900/20 rounded-lg border border-green-700/40 shadow-lg relative"
+                wire:loading.class="opacity-70 cursor-not-allowed" wire:target="calculatePoints, closeResult"
                 wire:loading.attr="disabled">
                 <button class="btn btn-ghost btn-circle btn-xs absolute top-2 right-2 text-gray-300 hover:text-gray-100"
                     wire:loading.attr="disabled" loading="closeResult" wire:click="closeResult">X</button>
                 <h2 class="text-xl font-semibold mb-2 text-green-400">Resultado:</h2>
-                <p class="text-lg text-gray-200">Você pode resgatar até <span class="italic">aproximadamente</span>
+                <p class="text-lg text-gray-200" wire:loading.remove wire:target="calculatePoints, closeResult">Você
+                    pode resgatar até <span class="italic">aproximadamente</span>
                     <span class="font-bold text-green-300">R$
                         {{ $points_in_value }}</span> em
                     prêmios!
                 </p>
+                <span class="loading loading-dots loading-sm" wire:loading
+                    wire:target="calculatePoints, closeResult"></span>
             </div>
         @endif
 

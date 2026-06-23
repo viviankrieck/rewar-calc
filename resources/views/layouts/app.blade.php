@@ -24,15 +24,15 @@
         x-bind:class="{ 'dark': darkTheme }">
 
         <!-- Navbar Simples -->
-        <livewire:home.navbar />
+        <livewire:components.home.navbar />
 
         <!-- Conteúdo principal -->
-        <main class="flex-1 overflow-auto sm:max-h-[calc(100vh-120px)] max-h-[calc(100vh-180px)]">
+        <main class="flex-1 overflow-auto sm:max-h-[calc(100vh-120px)] max-h-[calc(100vh-140px)]">
             {{ $slot }}
         </main>
 
         <!-- Footer Simples -->
-        <livewire:home.footer />
+        <livewire:components.home.footer />
         @livewireScripts
     </body>
 

@@ -10,7 +10,7 @@
 
             <!-- Calculadora primeiro em mobile -->
             <div class="w-full sm:w-[45%] order-1 sm:order-2 flex-1 md:flex-3">
-                <livewire:calculator.calculator />
+                <livewire:components.calculator />
             </div>
 
             <!-- Componente de moeda abaixo em mobile -->
